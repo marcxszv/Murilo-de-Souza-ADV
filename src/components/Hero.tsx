@@ -10,12 +10,12 @@ export function Hero() {
   return (
     <section
       id="topo"
-      className="relative flex h-[100svh] w-full items-center justify-center overflow-hidden bg-ink-950"
+      className="relative w-full overflow-hidden bg-ink-950 md:flex md:h-[100svh] md:items-center md:justify-center"
     >
       <img
         src={heroImage}
         alt="Murilo de Souza — Advocacia e Consultoria Jurídica"
-        className="h-full w-full object-cover object-center md:object-contain"
+        className="block h-auto w-full object-contain object-top md:h-full md:object-center"
         fetchPriority="high"
       />
     </section>
