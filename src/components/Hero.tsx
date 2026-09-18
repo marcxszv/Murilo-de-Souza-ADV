@@ -15,7 +15,7 @@ export function Hero() {
       <img
         src={heroImage}
         alt="Murilo de Souza — Advocacia e Consultoria Jurídica"
-        className="h-full w-full object-contain object-center"
+        className="h-full w-full object-cover object-center md:object-contain"
         fetchPriority="high"
       />
     </section>
