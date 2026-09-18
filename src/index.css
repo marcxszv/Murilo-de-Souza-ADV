@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+
+  /* fundo — grafite quase preto, sem chapado puro */
+  --color-ink-950: #0a0a08;
+  --color-ink-900: #100f0c;
+  --color-ink-850: #161512;
+  --color-ink-800: #1c1a16;
+  --color-ink-700: #2a2722;
+  --color-ink-600: #3d392f;
+
+  /* texto */
+  --color-paper-100: #f4f1ea;
+  --color-paper-300: #d9d4c7;
+  --color-mist-400: #a19c8d;
+  --color-mist-500: #8a8577;
+  --color-mist-600: #6c675a;
+
+  /* destaque — latão/dourado envelhecido, discreto */
+  --color-brass-300: #d9c48a;
+  --color-brass-400: #c7ad6c;
+  --color-brass-500: #b3934f;
+  --color-brass-600: #8f7439;
+
+  --animate-fade-up: fade-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(28px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-ink-700);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-ink-950);
+    color: var(--color-paper-100);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-brass-500);
+    color: var(--color-ink-950);
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* linha fina divisória, alinhada à identidade editorial */
+  .rule {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--color-brass-500) 60%, transparent),
+      transparent
+    );
+  }
+
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
