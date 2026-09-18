@@ -8,11 +8,14 @@ import heroImage from "../assets/hero-static.png"
  */
 export function Hero() {
   return (
-    <section id="topo" className="relative h-[100svh] w-full overflow-hidden bg-ink-950">
+    <section
+      id="topo"
+      className="relative flex h-[100svh] w-full items-center justify-center overflow-hidden bg-ink-950"
+    >
       <img
         src={heroImage}
         alt="Murilo de Souza — Advocacia e Consultoria Jurídica"
-        className="h-full w-full object-cover object-center"
+        className="h-full w-full object-contain object-center"
         fetchPriority="high"
       />
     </section>
